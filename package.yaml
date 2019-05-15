@@ -1,0 +1,63 @@
+name:                variant-summary-from-vcf
+version:             0.1.0.0
+github:              "krcurtis/variant-summary-from-vcf"
+license:             LGPL-3
+author:              "Keith Curtis"
+maintainer:          "example@example.com"
+copyright:           "Copyright 2019 Fred Hutchinson Cancer Research Center"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/krcurtis/variant-summary-from-vcf#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- optparse-applicative
+- attoparsec
+- conduit
+- conduit-combinators
+- bytestring
+- MissingH
+- parallel
+- deepseq
+- split
+- containers
+- vector
+- statistics # >= 0.14.0.2
+- ilist
+- cassava
+
+library:
+  source-dirs: src
+
+executables:
+  variant-summary-from-vcf-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -fllvm
+    dependencies:
+    - variant-summary-from-vcf
+
+tests:
+  variant-summary-from-vcf-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - variant-summary-from-vcf

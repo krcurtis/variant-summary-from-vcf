@@ -1,0 +1,103 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6d68bb3ea1feeba5d14071d4d1c30a2ba99c79e9742879ac425e0bec119395b3
+
+name:           variant-summary-from-vcf
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/krcurtis/variant-summary-from-vcf#readme>
+homepage:       https://github.com/krcurtis/variant-summary-from-vcf#readme
+bug-reports:    https://github.com/krcurtis/variant-summary-from-vcf/issues
+author:         Keith Curtis
+maintainer:     example@example.com
+copyright:      Copyright 2019 Fred Hutchinson Cancer Research Center
+license:        LGPL-3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/krcurtis/variant-summary-from-vcf
+
+library
+  exposed-modules:
+      VCF
+  other-modules:
+      Paths_variant_summary_from_vcf
+  hs-source-dirs:
+      src
+  build-depends:
+      MissingH
+    , attoparsec
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , conduit
+    , conduit-combinators
+    , containers
+    , deepseq
+    , ilist
+    , optparse-applicative
+    , parallel
+    , split
+    , statistics
+    , vector
+  default-language: Haskell2010
+
+executable variant-summary-from-vcf-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_variant_summary_from_vcf
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -fllvm
+  build-depends:
+      MissingH
+    , attoparsec
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , conduit
+    , conduit-combinators
+    , containers
+    , deepseq
+    , ilist
+    , optparse-applicative
+    , parallel
+    , split
+    , statistics
+    , variant-summary-from-vcf
+    , vector
+  default-language: Haskell2010
+
+test-suite variant-summary-from-vcf-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_variant_summary_from_vcf
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MissingH
+    , attoparsec
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , conduit
+    , conduit-combinators
+    , containers
+    , deepseq
+    , ilist
+    , optparse-applicative
+    , parallel
+    , split
+    , statistics
+    , variant-summary-from-vcf
+    , vector
+  default-language: Haskell2010
