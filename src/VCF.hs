@@ -121,19 +121,7 @@ is_sample_line row = case (parse_results) of
 
 
 --is_variant_row :: B.ByteString -> Bool
-is_variant_row row = letter == (c2w8 '1') ||
-                     letter == (c2w8 '2') ||
-                     letter == (c2w8 '3') ||
-                     letter == (c2w8 '4') ||
-                     letter == (c2w8 '5') ||
-                     letter == (c2w8 '6') ||
-                     letter == (c2w8 '7') ||
-                     letter == (c2w8 '8') ||
-                     letter == (c2w8 '9') ||
-                     letter == (c2w8 '0') ||
-                     letter == (c2w8 'X') ||
-                     letter == (c2w8 'Y') ||
-                     letter == (c2w8 'M')
+is_variant_row row = letter /= (c2w8 '#')
   where letter = (c2w8 . B.head) row
 
 
